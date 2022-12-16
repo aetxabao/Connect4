@@ -35,7 +35,7 @@ public class Tablero {
         turno = X;
         ancho = 0;
         alto = 0;
-        this.m = m;
+        this.m = null;
     }
 
     public int getAncho() {
