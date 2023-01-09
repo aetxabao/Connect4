@@ -1,7 +1,5 @@
 package com.aetxabao.connect4;
 
-import static com.aetxabao.connect4.Tablero.*;
-
 /**
  * @author Nombre Apellido
  */
@@ -42,7 +40,14 @@ public class Salida {
         System.out.println("###################################");
         System.out.println("                                   ");
         char[] letras = {'A','B','C','D','E','F'};
-
+        for (int fil = h - 1; fil >= 0; fil--) {
+            System.out.printf("%c  | ",letras[fil]);
+            for (int col = 0; col < w; col++) {
+                System.out.print(matriz[col][fil]);
+                System.out.print(" | ");
+            }
+            System.out.printf(" %c\n",letras[fil]);
+        }
         System.out.println("   -----------------------------   ");
         System.out.println("   | 1 | 2 | 3 | 4 | 5 | 6 | 7 |   ");
         System.out.println("                                   ");
@@ -56,29 +61,6 @@ public class Salida {
     public static void pintaEmpate(char[][] m) {
         pinta(m);
         System.out.println("Empate. No hay ganador. FIN.");
-    }
-
-    public static void main(String[] args) {
-        char[][] m0 = {
-                {' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' '}
-        };
-        pinta(m0);
-        char[][] m1 = {
-                {X, O, X, O, L, L},
-                {X, O, L, L, L, L},
-                {X, O, X, O, O, X},
-                {O, X, O, O, X, X},
-                {O, X, X, O, L, L},
-                {O, O, L, L, L, L},
-                {X, X, O, L, L, L}
-        };
-        pinta(m1);
     }
 
 }
